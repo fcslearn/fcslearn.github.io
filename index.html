@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Focus Learn</title>
+    <meta
+      content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="css/todo.css" media="all" rel="stylesheet" type="text/css" />
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7COswald:300,400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- google fonts end -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="https://kit.fontawesome.com/3e2d5ff50d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body onload="startTime()">
+    <div id="home" class="bggif">
+      <div class="logo">
+        <h1>Focus Learning</h1>
+        <div id="clock"></div>
+      </div>
+      <img src="img/bg.gif" alt="bggif" />
+    </div>
+    <div class="sidenav">
+      <button onclick="window.location.href='#home'">Home</button>
+      <br>
+      <br>
+      <button onclick="window.location.href='#music'">Music</button>
+    </div>
+    <div id="music" class="center">
+      <div class="inner-divider-full"></div>
+      <h1 class="heading">Music Controller</h1>
+      <div class="inner-divider-half"></div>
+      <h4 class="music-heading">Now playing:</h4>
+      <br />
+      <h4 id="song-name" class="music-heading"></h4>
+      <div class="inner-divider-half"></div>
+      <audio autoplay id="bgmusic"></audio>
+      <span id="current-time" class="music-heading">0:00</span>
+      <div id="timeline">
+        <div id="playhead"></div>
+      </div>
+      <span id="duration" class="music-heading">0:00</span>
+      <div class="inner-divider-half"></div>
+      <button class="music-heading music-button" id="prev-icon">Prev</button>
+      <button class="music-heading music-button" id="play-icon">PLay</button>
+      <button class="music-heading music-button" id="pause-icon">Pause</button>
+      <button class="music-heading music-button" id="next-icon">Next</button>
+      <br />
+      <br />
+      <button class="music-heading music-button" id="loop-icon">
+        Loop: Off
+      </button>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/music.js"></script>
+    <script src="./js/plugin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+              scrollTop: $(hash).offset().top
+          }, 800, function(){
+
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+          });
+          } // End if
+      });
+      });
+      </script>
+  </body>
+</html>

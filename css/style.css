@@ -10,6 +10,7 @@ body {
   -moz-animation: fadeIn 5s;
   -o-animation: fadeIn 5s;
   -ms-animation: fadeIn 5s;
+  overflow: hidden;
 }
 
 .bggif {
